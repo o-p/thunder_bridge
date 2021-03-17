@@ -10,6 +10,8 @@ contract ERC677ReceiverTest is ERC677Receiver {
     uint public someVar = 0;
 
     function onTokenTransfer(address _from, uint256 _value, bytes _data) external returns(bool) {
+        require(_value != 666, "Very 6 testing");
+
         from = _from;
         value = _value;
         data = _data;
